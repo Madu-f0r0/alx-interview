@@ -3,6 +3,12 @@
 
 
 def pascal_triangle(n):
+    """ Implements Pascal's Triangle
+    Parameter:
+    n: (int) the number of rows in the triangle
+    Returns: An empty list if n <= 0, or a list of list
+    Each inner list contains the values in a row
+    """
     triangle = []
 
     for r in range(n):
