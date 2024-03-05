@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+""" Implementation of Pascals Triangle Algorithm """
+
+
 def pascal_triangle(n):
     triangle = []
 
