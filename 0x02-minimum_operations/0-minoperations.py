@@ -7,14 +7,14 @@ def minOperations(n: int) -> int:
     in a specified number of `H` characters in a file using only the
     `Copy All` and `Paste` operations
     """
-    fileContent = 'H'
-    copiedText = ''
+    fileContent = 1
+    copiedText = 0
     noOfOperations = 0
 
-    while len(fileContent) < n:
-        if n % len(fileContent) == 0:
+    while fileContent < n:
+        if n % fileContent == 0:
             copiedText = fileContent
             noOfOperations += 1
-        fileContent = fileContent + copiedText
+        fileContent += copiedText
         noOfOperations += 1
     return noOfOperations
