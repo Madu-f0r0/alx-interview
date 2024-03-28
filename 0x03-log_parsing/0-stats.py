@@ -12,7 +12,6 @@ lineCounter = 0
 
 # Read stdin input line by line
 for line in sys.stdin:
-    lineCounter += 1
     parsedInputLine = line.split(' ')
 
     # Confirm input format
@@ -21,6 +20,7 @@ for line in sys.stdin:
         statusCode = parsedInputLine[-2]
 
         totalFileSize += fileSize
+        lineCounter += 1
 
         # Confirm that status code in the input is being checked
         if statusCode in statusCodesFrequency.keys():
