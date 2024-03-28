@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """This script parses a log and outputs its metrics"""
 
 import sys
