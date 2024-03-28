@@ -10,26 +10,34 @@ statusCodesFrequency = {'200': 0, '301': 0, '400': 0, '401': 0,
 totalFileSize = 0
 lineCounter = 0
 
-# Read stdin input line by line
-for line in sys.stdin:
-    parsedInputLine = line.split(' ')
+try:
+    # Read stdin input line by line
+    for line in sys.stdin:
+        parsedInputLine = line.split(' ')
 
-    # Confirm input format
-    if len(parsedInputLine) == 9:
-        fileSize = int(parsedInputLine[-1])
-        statusCode = parsedInputLine[-2]
+        # Confirm input format
+        if len(parsedInputLine) == 9:
+            fileSize = int(parsedInputLine[-1])
+            statusCode = parsedInputLine[-2]
 
-        totalFileSize += fileSize
-        lineCounter += 1
+            totalFileSize += fileSize
+            lineCounter += 1
 
-        # Confirm that status code in the input is being checked
-        if statusCode in statusCodesFrequency.keys():
-            statusCodesFrequency[statusCode] += 1
+            # Confirm that status code in the input is being checked
+            if statusCode in statusCodesFrequency.keys():
+                statusCodesFrequency[statusCode] += 1
 
-        # Print total file size after every 10 input lines
-        if lineCounter == 10:
-            lineCounter = 0
-            print("File size: {}".format(totalFileSize))
-            for code, frequency in statusCodesFrequency.items():
-                if frequency > 0:
-                    print("{}: {}".format(code, frequency))
+            # Print total file size after every 10 input lines
+            if lineCounter == 10:
+                lineCounter = 0
+                print("File size: {}".format(totalFileSize))
+                for code, frequency in statusCodesFrequency.items():
+                    if frequency > 0:
+                        print("{}: {}".format(code, frequency))
+except Exception:
+    pass
+finally:
+    print("File size: {}".format(totalFileSize))
+    for code, frequency in statusCodesFrequency.items():
+        if frequency > 0:
+            print("{}: {}".format(code, frequency))
