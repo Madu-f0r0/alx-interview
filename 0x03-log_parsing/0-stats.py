@@ -16,7 +16,7 @@ try:
         parsedInputLine = line.split(' ')
 
         # Confirm input format
-        if len(parsedInputLine) == 9:
+        if len(parsedInputLine) > 4:
             fileSize = int(parsedInputLine[-1])
             statusCode = parsedInputLine[-2]
 
