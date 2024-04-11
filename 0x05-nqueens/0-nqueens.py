@@ -62,8 +62,8 @@ def validPlacementOrNot(queensCoordinates, row, n):
 
 
 def solveNQueens(n, column, queensPosition, allPlacements):
-    """Backtracking agorithm to find all the possible positions for N non-attacking queens
-    on an N x N chessboard
+    """Backtracking algorithm to find all the possible positions for
+    N non-attacking queens on an N x N chessboard
     """
     if column == n:
         allPlacements.append(queensPosition.copy())
